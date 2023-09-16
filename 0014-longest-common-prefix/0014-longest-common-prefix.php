@@ -8,23 +8,23 @@ class Solution {
      */
     function longestCommonPrefix($strs) {
         
-        $prefix = '';
+        $common = '';
 
         for ($i=0; $i<strlen($strs[0]); $i++)
         {
-            $prefix .= $strs[0][$i];
+            $common .= $strs[0][$i];
             foreach($strs as $str)
             {
-                if (substr($str, 0, strlen($prefix)) == $prefix)
+                if (substr($str, 0, strlen($common)) == $common)
                 {
                     continue;
                 }
                 else 
                 {
-                    return substr($prefix, 0, -1);
+                    return substr($common, 0, -1);
                 }
             }
         }
-        return $prefix;
+        return $common;
     }
 }
